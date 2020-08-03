@@ -1,0 +1,2 @@
+# exercicioMedicoPaciente
+exercicio FBD
