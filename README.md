@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS convenio(
 
 );
 
-CREATE IF NOT EXISTS medico(
+CREATE TABLE IF  NOT EXISTS medico(
 	crm integer,
 	nome varchar(60),
 	endereço varchar(255),
@@ -41,7 +41,7 @@ CREATE IF NOT EXISTS medico(
 
 );
 
-CREATE IF NOT EXISTS consulta (
+CREATE TABLE IF NOT EXISTS consulta (
 	codconsulta serial not null,
 	dia date,
 	horario time,
@@ -51,8 +51,7 @@ CREATE IF NOT EXISTS consulta (
 	
 	CONSTRAINT consulta_fkey FOREIGN KEY (codconsulta)
 REFERENCES medico(crm),
-	CONSTRAINT consulta_fkey FOREIGN KEY (codconsulta)
-REFERENCES paciente (codpac)
+	  CONSTRAINT consulta_fkey2 FOREIGN KEY (codconsulta) REFERENCES paciente(codpac)
 
 );
 
@@ -60,8 +59,7 @@ CREATE TABLE IF NOT EXISTS atende(
 	crm integer,
 	CONSTRAINT atende_fkey FOREIGN KEY (crm)
 REFERENCES medico (crm),
-	CONSTRAINT atende_fkey FOREIGN KEY (crm)
-REFERENCES convenio(codconv)
+	CONSTRAINT atende_fkey2 FOREIGN KEY (crm) REFERENCES convenio(CODCONV)
 
 );
 
@@ -73,8 +71,8 @@ CREATE TABLE IF NOT EXISTS possui(
 	CONSTRAINT possui_pkey PRIMARY KEY (paciente),
 	CONSTRAINT possui_fkey FOREIGN KEY (paciente)
 REFERENCES paciente(codpac),
-	CONSTRAINT possui_fkey FOREIGN KEY(paciente)
-REFERENCES convenio(codconv)
+CONSTRAINT possui_fkey2 FOREIGN KEY(paciente) REFERENCES convenio(codconv)
 	
 );
+
 
