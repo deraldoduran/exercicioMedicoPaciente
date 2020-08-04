@@ -91,3 +91,8 @@ ALTER TABLE atende DROP CONSTRAINT atende_fkey2;
 INSERT INTO atende(crm, convenio) VALUES (18739, 189),
 (18739, 908),(7646, 232), (39872, 189);
 
+ALTER TABLE consulta DROP CONSTRAINT consulta_fkey2;
+
+ALTER TABLE possui DROP CONSTRAINT possui_fkey2;
+
+ALTER TABLE possui ADD COLUMN convenio integer;
