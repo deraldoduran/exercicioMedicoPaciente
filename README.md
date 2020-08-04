@@ -81,3 +81,13 @@ INSERT INTO medico(crm, nome, endereço, telefone, especialidade) VALUES (18739,
 INSERT INTO paciente(nome, endereço, telefone) VALUES('João', 'Rua 1', '9809-9756'),
 ('José', 'Rua B', '3621-8978'),('Maria', 'Rua 10', '4567-9872'),('Joana', 'Rua J', '3343-9889');
 
+INSERT INTO convenio(codconv, nome) VALUES (189, 'Cassi'),
+(232, 'Unimed'),(454, 'Santa Casa'), (908,'Copasa'), (435, 'São Lucas');
+
+ALTER TABLE atende ADD COLUMN convenio integer;
+
+ALTER TABLE atende DROP CONSTRAINT atende_fkey2;
+
+INSERT INTO atende(crm, convenio) VALUES (18739, 189),
+(18739, 908),(7646, 232), (39872, 189);
+
