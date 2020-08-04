@@ -75,4 +75,9 @@ CONSTRAINT possui_fkey2 FOREIGN KEY(paciente) REFERENCES convenio(codconv)
 	
 );
 
+INSERT INTO medico(crm, nome, endereço, telefone, especialidade) VALUES (18739, 'Elias', 'Rua X', '8738-1221', 'Pediatria'),
+(7646, 'Ana', 'Av Z', '7829-1233', 'Obstetricia'),(39872, 'Pedro', 'Tv H', '9888-2333', 'Oftalmologia');
+
+INSERT INTO paciente(nome, endereço, telefone) VALUES('João', 'Rua 1', '9809-9756'),
+('José', 'Rua B', '3621-8978'),('Maria', 'Rua 10', '4567-9872'),('Joana', 'Rua J', '3343-9889');
 
