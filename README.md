@@ -96,3 +96,5 @@ ALTER TABLE consulta DROP CONSTRAINT consulta_fkey2;
 ALTER TABLE possui DROP CONSTRAINT possui_fkey2;
 
 ALTER TABLE possui ADD COLUMN convenio integer;
+
+INSERT INTO possui(tipo, vencimento, paciente, convenio) VALUES ('E', '31/12/2016', 4, 435), ('S', '31/12/2015', 1, 232);
